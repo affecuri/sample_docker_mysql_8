@@ -1,0 +1,109 @@
+# ************************************************************
+# Sequel Pro SQL dump
+# Version 5446
+#
+# https://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Host: 127.0.0.1 (MySQL 8.0.21)
+# Database: test_db
+# Generation Time: 2020-08-04 12:16:24 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+SET NAMES utf8mb4;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table class
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `class`;
+
+CREATE TABLE `class` (
+  `class_id` int unsigned NOT NULL AUTO_INCREMENT,
+  `class_name` varchar(128) COLLATE utf8mb4_bin DEFAULT NULL,
+  PRIMARY KEY (`class_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+LOCK TABLES `class` WRITE;
+/*!40000 ALTER TABLE `class` DISABLE KEYS */;
+
+INSERT INTO `class` (`class_id`, `class_name`)
+VALUES
+	(1,X'41E7B584'),
+	(2,X'42E7B584'),
+	(3,X'43E7B584'),
+	(4,X'44E7B584'),
+	(5,X'45E7B584');
+
+/*!40000 ALTER TABLE `class` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table points
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `points`;
+
+CREATE TABLE `points` (
+  `points_id` int NOT NULL AUTO_INCREMENT,
+  `class_id` int NOT NULL,
+  `student_name` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+  `student_points` int NOT NULL,
+  PRIMARY KEY (`points_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+LOCK TABLES `points` WRITE;
+/*!40000 ALTER TABLE `points` DISABLE KEYS */;
+
+INSERT INTO `points` (`points_id`, `class_id`, `student_name`, `student_points`)
+VALUES
+	(1,1,X'E794B0E4B8AD',100),
+	(2,1,X'E4BD90E897A4',80),
+	(3,1,X'E6968EE897A4',90),
+	(4,1,X'E988B4E69CA8',70),
+	(5,2,X'E5B1B1E794B0',90),
+	(6,2,X'E5B1B1E69CAC',85),
+	(7,2,X'E5B1B1E4B88B',89),
+	(8,2,X'E5B1B1E58FA3',90),
+	(9,2,X'E4BD90E38085E69CA8',99),
+	(10,2,X'E99D92E5B1B1',45),
+	(11,3,X'E4BA95E4B88A',98),
+	(12,3,X'E4BC8AE897A4',96),
+	(13,3,X'E4BA95E58FA3',45),
+	(14,3,X'E4B88AE794B0',50),
+	(15,3,X'E4B88AE69CAC',64),
+	(16,3,X'E6B19FE897A4',74),
+	(17,3,X'E6B19FE58FA3',78),
+	(18,3,X'E5B08FE5B79D',91),
+	(19,4,X'E5B08FE794B0',97),
+	(20,4,X'E58AA0E897A4',34),
+	(21,4,X'E5B79DE8A5BF',54),
+	(22,4,X'E69CA8E4B88B',67),
+	(23,4,X'E5B08FE5B1B1',97),
+	(24,5,X'E696B0E5BA84',23),
+	(25,5,X'E9A088E794B0',54),
+	(26,5,X'E780ACE9878E',56),
+	(27,5,X'E58D83E4BBA3E794B0',42),
+	(28,5,X'E59C9FE794B0',56),
+	(29,5,X'E6898BE8B68A',65),
+	(30,5,X'E688B8E794B0',67);
+
+/*!40000 ALTER TABLE `points` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
